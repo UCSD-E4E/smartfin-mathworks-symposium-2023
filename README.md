@@ -22,7 +22,19 @@ This approach causes amplification of the bias in the accelerometer readings.  T
 
 ## Dataset
 
-The `sample_data` in this repo was collected on a [VN-300 VectorNav IMU](https://www.vectornav.com/products/detail/vn-300).
+The `sample_data` in this repo was collected on a [VN-300 VectorNav IMU](https://www.vectornav.com/products/detail/vn-300).  The three datasets provided are defined below.
+
+### vectornav_pitch45_5_17.csv
+
+In this dataset, the VN-300 starts flat on a desk.  It is then pitched to a positive 22 degree angle.  Finally, it is returned to flat on the table.
+
+### vectornav_still_5_17.csv
+
+In this dataset, the VN-300 remains flat on a desk.
+
+### vectornav_vertical_5_17.csv
+
+In this dataset, the VN-300 is starts on a desk.  It then is raised to 20 cm then moved back down.  This motion is repeated multiple times. Finally, the VN-300 is returned to the desk.
 
 ## Future Work
 
