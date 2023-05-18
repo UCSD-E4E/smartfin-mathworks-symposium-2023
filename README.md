@@ -9,6 +9,6 @@ Searching for a solution to this problem, the Surfrider Foundation has partnered
 
 Seen below, in images provided by [surfrider.org](https://www.surfrider.org) is an early model of the Smartfin attached to a surfboard. This clear fin shows the battery, GPS, temperature sensor, and IMU (inertial measurement unit). The fin is still going through an iterative design process as more hardware is added to increase its capabilities. As seen on the photo to its right.
 
-![](/assets/images/SF_seeThrough_fullres-1074x747.jpg) ![](/assets/images/SF_handFin_fullres.jpg)
+![](/assets/SF_seeThrough_fullres-1074x747.jpg) ![](/assets/SF_handFin_fullres.jpg)
 
 ##
