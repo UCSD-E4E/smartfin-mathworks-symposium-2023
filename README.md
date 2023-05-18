@@ -9,6 +9,17 @@ Searching for a solution to this problem, the Surfrider Foundation has partnered
 
 Seen below, in images provided by [surfrider.org](https://www.surfrider.org) is an early model of the Smartfin attached to a surfboard. This clear fin shows the battery, GPS, temperature sensor, and IMU (inertial measurement unit). The fin is still going through an iterative design process as more hardware is added to increase its capabilities. As seen on the photo to its right.
 
-![](/assets/SF_seeThrough_fullres-1074x747.jpg) ![](/assets/SF_handFin_fullres.jpg)
+<p float="left">
+  <img src="/assets/SF_seeThrough_fullres-1074x747.jpg" width="45%">
+  <img src="/assets/SF_handFin_fullres.jpg" width="45%">
+</p>
 
-##
+## Wave Height Analysis
+
+This repo uses a Kalman filter to estimate the orientation of the fin.  It then applies the orientation to the measured acceleration, transforming it from the sensor body frame to the world frame.  With the acceleration in the world frame, we can use double integration on the Z component to calculate first the velocity, then the position.
+
+This approach causes amplification of the bias in the accelerometer readings.  Therefore, small errros in acceleration can become large errors in position.
+
+## Future Work
+
+In order to resolve the aforementioned issue with double integration, it would be ideal to extend our Kalman filter with the ability to estimate position as well as orientation.  To do so would allow us to account for the bias and potentially correct it.
