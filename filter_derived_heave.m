@@ -1,4 +1,4 @@
-function [velocity, position] = filter_derived_heave(sensor_data, sampling_rate, target_frequency)
+function [acceleration, velocity, position] = filter_derived_heave(sensor_data, sampling_rate, target_frequency)
     function valid = validate_sensor_data(sensor_data)
         if ~istable(sensor_data)
             error("sensor_data is not a table.");
@@ -45,8 +45,8 @@ function [velocity, position] = filter_derived_heave(sensor_data, sampling_rate,
 
     validate_sensor_data(sensor_data);
     world_rotation = get_world_rotation(sensor_data, sampling_rate);
-    world_acceleration = get_world_acceleration(sensor_data.Accelerometer, world_rotation);
-    world_acceleration_z = downsample(world_acceleration(:, 3), int32(sampling_rate) / target_frequency);
+    acceleration = get_world_acceleration(sensor_data.Accelerometer, world_rotation);
+    world_acceleration_z = downsample(acceleration(:, 3), int32(sampling_rate) / target_frequency);
 
     [velocity, position] = get_velocity_position(world_acceleration_z, target_frequency);
 end
