@@ -20,6 +20,10 @@ This repo uses a Kalman filter to estimate the orientation of the fin.  It then 
 
 This approach causes amplification of the bias in the accelerometer readings.  Therefore, small errros in acceleration can become large errors in position.
 
+## Dataset
+
+The `sample_data` in this repo was collected on a [VN-300 VectorNav IMU](https://www.vectornav.com/products/detail/vn-300).
+
 ## Future Work
 
 In order to resolve the aforementioned issue with double integration, it would be ideal to extend our Kalman filter with the ability to estimate position as well as orientation.  To do so would allow us to account for the bias and potentially correct it.
